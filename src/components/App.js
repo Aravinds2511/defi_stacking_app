@@ -1,10 +1,18 @@
 import React, { Component } from "react";
+import Navbar from "./Navbar";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      account: "0x0",
+    };
+  }
+
   render() {
     return (
       <div>
-        <h>Hello World</h>
+        <Navbar account={this.state.account} />
       </div>
     );
   }
