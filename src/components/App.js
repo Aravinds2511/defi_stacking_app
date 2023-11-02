@@ -4,6 +4,7 @@ import Web3 from "web3";
 import Tether from "../truffle_abis/Tether.json";
 import RWD from "../truffle_abis/RWD.json";
 import DecentralBank from "../truffle_abis/DecentralBank.json";
+import Main from "./Main";
 
 class App extends Component {
   async UNSAFE_componentWillMount() {
@@ -88,10 +89,30 @@ class App extends Component {
   }
 
   render() {
+    let content;
+    {
+      this.state.loading
+        ? (content = (
+            <p id="loader" className="text-center" style={{ margin: "30px" }}>
+              Loading Please...
+            </p>
+          ))
+        : (content = <Main />);
+    }
     return (
       <div>
         <Navbar account={this.state.account} />
-        <h1>{console.log(this.state.loading)}</h1>
+        <div className="container-fluid mt-5">
+          <div className="row">
+            <main
+              role="main"
+              className="col-lg-12 ml-auto mr-auto"
+              style={{ maxWidth: "600px", maxHeight: "100vm" }}
+            >
+              <div>{content}</div>
+            </main>
+          </div>
+        </div>
       </div>
     );
   }
