@@ -87,6 +87,7 @@ class App extends Component {
           .send({ from: this.state.account })
           .on("transactionHash", (hash) => {
             this.setState({ loading: false });
+            window.location.reload();
           });
       });
   };
@@ -99,6 +100,7 @@ class App extends Component {
       .send({ from: this.state.account })
       .on("transactionHash", (hash) => {
         this.setState({ loading: false });
+        window.location.reload();
       });
   };
 
@@ -110,6 +112,7 @@ class App extends Component {
       .send({ from: this.state.account })
       .on("transactionHash", (hash) => {
         this.setState({ loading: false });
+        window.location.reload();
       });
   };
   constructor(props) {
