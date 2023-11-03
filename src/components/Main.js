@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import tether from "../tether.png";
+import Airdrop from "./Airdrop";
+
 class Main extends Component {
   render() {
     console.log(this.props.tetherBalance);
@@ -91,7 +93,7 @@ class Main extends Component {
             WITHDRAW
           </button>
           <div className="card-body text-center" style={{ color: "yellow" }}>
-            AIRDROP
+            AIRDROP <Airdrop stakingBalance={this.props.stakingBalance} />
           </div>
         </div>
       </div>
