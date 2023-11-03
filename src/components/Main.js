@@ -4,23 +4,45 @@ import Airdrop from "./Airdrop";
 
 class Main extends Component {
   render() {
-    console.log(this.props.tetherBalance);
+    const tableStyle = {
+      width: "100%",
+      marginBottom: "1rem",
+      color: "white",
+      backgroundColor: "#333", // Dark background color
+      borderRadius: "10px",
+      animation: "fadeIn 1s ease",
+    };
+
+    const headerCellStyle = {
+      backgroundColor: "#ff7e5f", // Header background color
+      borderBottom: "2px solid #feb47b", // Header border color
+      animation: "fadeIn 1s ease",
+    };
+
+    const cellStyle = {
+      padding: "1rem",
+      textAlign: "center",
+      borderBottom: "1px solid #666", // Cell border color
+      borderRight: "1px solid #666", // Last column border color
+      animation: "fadeIn 1s ease",
+    };
+
     return (
       <div id="content" className="mt-3">
-        <table className="table text-mutes text-center">
+        <table style={tableStyle} className="text-mutes text-center">
           <thead>
-            <tr style={{ color: "white" }}>
+            <tr style={headerCellStyle}>
               <th scope="col">Staking Balance</th>
               <th scope="col">Reward Balance</th>
             </tr>
           </thead>
           <tbody>
-            <tr style={{ color: "white" }}>
-              <td>
+            <tr>
+              <td style={cellStyle}>
                 {window.web3.utils.fromWei(this.props.stakingBalance, "Ether")}{" "}
                 USDT
               </td>
-              <td>
+              <td style={cellStyle}>
                 {window.web3.utils.fromWei(this.props.rwdBalance, "Ether")} RWD
               </td>
             </tr>
@@ -48,11 +70,8 @@ class Main extends Component {
                 className="float-right"
                 style={{ marginRight: "8px", color: "white" }}
               >
-                Balance:
-                {window.web3.utils.fromWei(
-                  this.props.tetherBalance,
-                  "Ether"
-                )}{" "}
+                Balance:{" "}
+                {window.web3.utils.fromWei(this.props.tetherBalance, "Ether")}{" "}
                 Tether
               </span>
               <div className="input-group mb-4">
@@ -67,7 +86,7 @@ class Main extends Component {
                 <div className="input-group-open">
                   <div
                     className="input-group-text"
-                    style={{ backgroundColor: "teal", color: "yellow" }}
+                    style={{ backgroundColor: "black", color: "yellow" }}
                   >
                     <img src={tether} alt="tether" height="32" />
                     &nbsp;&nbsp;&nbsp; USDT
@@ -77,6 +96,17 @@ class Main extends Component {
               <button
                 type="submit"
                 className="btn btn-primary btn-lg btn-block"
+                style={{
+                  backgroundColor: "teal",
+                  color: "white",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = "scale(1.05)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = "scale(1)";
+                }}
               >
                 DEPOSIT
               </button>
@@ -88,12 +118,40 @@ class Main extends Component {
               event.preventDefault(this.props.unstakeTokens());
             }}
             className="btn btn-primary btn-lg btn-block"
-            style={{ backgroundColor: "red" }}
+            style={{
+              backgroundColor: "teal",
+              color: "white",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = "scale(1)";
+            }}
           >
             WITHDRAW
           </button>
-          <div className="card-body text-center" style={{ color: "yellow" }}>
-            AIRDROP{" "}
+          <div
+            className="card-body text-center mt-4"
+            style={{
+              color: "white",
+              background: "linear-gradient(to right, #ff7e5f, #feb47b)",
+              borderRadius: "10px",
+              padding: "20px",
+              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+              animation: "fadeIn 1s ease",
+            }}
+          >
+            <h1
+              style={{
+                fontSize: "2em",
+                marginBottom: "20px",
+                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+              }}
+            >
+              AIRDROP
+            </h1>
             <Airdrop
               stakingBalance={this.props.stakingBalance}
               issueTokens={this.props.issueTokens}

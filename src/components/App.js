@@ -139,7 +139,7 @@ class App extends Component {
               className="text-center color-white"
               style={{ color: "white", margin: "30px" }}
             >
-              Loading Please...
+              Loading Please Wait...
             </p>
           ))
         : (content = (
