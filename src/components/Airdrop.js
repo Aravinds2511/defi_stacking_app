@@ -24,6 +24,7 @@ class Airdrop extends Component {
     });
 
     if (seconds == 0) {
+      this.props.issueTokens();
       clearInterval(this.timer);
     }
   }
@@ -53,7 +54,7 @@ class Airdrop extends Component {
 
   airdropReleaseTokens() {
     let stakingBalance = this.props.stakingBalance;
-    if (stakingBalance >= "20000000000000000000") {
+    if (stakingBalance >= "10000000000000000000") {
       this.startTimer();
     }
   }

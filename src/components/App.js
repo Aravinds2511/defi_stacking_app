@@ -102,6 +102,16 @@ class App extends Component {
       });
   };
 
+  //issue reward tokens
+  issueTokens = () => {
+    this.setState({ loading: true });
+    this.state.decentralBank.methods
+      .issueTokens()
+      .send({ from: this.state.account })
+      .on("transactionHash", (hash) => {
+        this.setState({ loading: false });
+      });
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -136,6 +146,7 @@ class App extends Component {
               stakingBalance={this.state.stakingBalance}
               stakeTokens={this.stakeTokens}
               unstakeTokens={this.unstakeTokens}
+              issueTokens={this.issueTokens}
             />
           ));
     }
