@@ -7,23 +7,25 @@ class Main extends Component {
     const tableStyle = {
       width: "100%",
       marginBottom: "1rem",
-      color: "white",
-      backgroundColor: "#333", // Dark background color
+      color: "yellow",
+      //backgroundColor: "black",
       borderRadius: "10px",
       animation: "fadeIn 1s ease",
     };
 
     const headerCellStyle = {
-      backgroundColor: "#ff7e5f", // Header background color
-      borderBottom: "2px solid #feb47b", // Header border color
+      backgroundColor: "#ff7e5f",
+      borderBottom: "2px solid #feb47b",
       animation: "fadeIn 1s ease",
+      color: "white",
     };
 
     const cellStyle = {
       padding: "1rem",
       textAlign: "center",
-      borderBottom: "1px solid #666", // Cell border color
-      borderRight: "1px solid #666", // Last column border color
+      borderBottom: "1px solid #666",
+      borderRight: "1px solid #666",
+      borderLeft: "1px solid #666",
       animation: "fadeIn 1s ease",
     };
 
@@ -62,13 +64,13 @@ class Main extends Component {
             <div style={{ borderSpacing: "0 1em" }}>
               <label
                 className="float-left"
-                style={{ marginLeft: "15px", color: "white" }}
+                style={{ marginLeft: "15px", color: "yellow" }}
               >
                 <b>Stake Tokens</b>
               </label>
               <span
                 className="float-right"
-                style={{ marginRight: "8px", color: "white" }}
+                style={{ marginRight: "8px", color: "yellow" }}
               >
                 Balance:{" "}
                 {window.web3.utils.fromWei(this.props.tetherBalance, "Ether")}{" "}
