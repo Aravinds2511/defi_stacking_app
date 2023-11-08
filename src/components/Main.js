@@ -7,7 +7,7 @@ class Main extends Component {
     const tableStyle = {
       width: "100%",
       marginBottom: "1rem",
-      color: "yellow",
+      color: "white",
       //backgroundColor: "black",
       borderRadius: "10px",
       animation: "fadeIn 1s ease",
@@ -64,13 +64,13 @@ class Main extends Component {
             <div style={{ borderSpacing: "0 1em" }}>
               <label
                 className="float-left"
-                style={{ marginLeft: "15px", color: "yellow" }}
+                style={{ marginLeft: "15px", color: "white" }}
               >
                 <b>Stake Tokens</b>
               </label>
               <span
                 className="float-right"
-                style={{ marginRight: "8px", color: "yellow" }}
+                style={{ marginRight: "8px", color: "white" }}
               >
                 Balance:{" "}
                 {window.web3.utils.fromWei(this.props.tetherBalance, "Ether")}{" "}
@@ -99,9 +99,12 @@ class Main extends Component {
                 type="submit"
                 className="btn btn-primary btn-lg btn-block"
                 style={{
-                  backgroundColor: "teal",
+                  backgroundColor: "brown",
                   color: "white",
                   transition: "all 0.3s ease",
+                  fontSize: "1.5em",
+                  marginBottom: "20px",
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.transform = "scale(1.05)";
@@ -121,9 +124,12 @@ class Main extends Component {
             }}
             className="btn btn-primary btn-lg btn-block"
             style={{
-              backgroundColor: "teal",
+              backgroundColor: "brown",
               color: "white",
               transition: "all 0.3s ease",
+              fontSize: "1.5em",
+              marginBottom: "20px",
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
             }}
             onMouseEnter={(e) => {
               e.target.style.transform = "scale(1.05)";

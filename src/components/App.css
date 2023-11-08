@@ -1,0 +1,54 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    #7289da,
+    #7289da,
+    #7289da,
+    #5865f2,
+    #5865f2
+  ); /* Discord-like gradient background */
+  z-index: -1;
+  animation: moveBackground 20s linear infinite,
+    colorChange 10s alternate infinite;
+}
+
+/* @keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+} */
+
+/* Interactive Animation */
+.background:hover {
+  animation: none; /* Pause the background animation on hover */
+}
+
+.background.active {
+  animation: moveBackground 20s linear infinite,
+    colorChange 10s alternate infinite;
+}

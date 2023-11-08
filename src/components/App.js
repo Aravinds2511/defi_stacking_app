@@ -5,7 +5,7 @@ import Tether from "../truffle_abis/Tether.json";
 import RWD from "../truffle_abis/RWD.json";
 import DecentralBank from "../truffle_abis/DecentralBank.json";
 import Main from "./Main";
-import ParticleSettings from "./ParticleSettings";
+import "./App.css";
 
 class App extends Component {
   async UNSAFE_componentWillMount() {
@@ -154,17 +154,15 @@ class App extends Component {
           ));
     }
     return (
-      <div className="App" style={{ position: "relative" }}>
-        <div style={{ position: "absolute" }}>
-          <ParticleSettings />
-        </div>
+      <div className="App">
+        <div className="background"></div>
         <Navbar account={this.state.account} />
         <div className="container-fluid mt-5">
           <div className="row">
             <main
               role="main"
               className="col-lg-12 ml-auto mr-auto"
-              style={{ maxWidth: "600px", maxHeight: "100vm" }}
+              style={{ maxWidth: "600px", maxHeight: "100vh" }}
             >
               <div>{content}</div>
             </main>
